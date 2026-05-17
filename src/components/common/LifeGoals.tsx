@@ -1,5 +1,5 @@
 import React from 'react';
-import { useTradeData } from '../hooks/useTradeData';
+import { useTradeData } from '../../hooks/useTradeData';
 
 export const LifeGoals: React.FC = () => {
   const { trades } = useTradeData();

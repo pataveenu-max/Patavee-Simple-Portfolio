@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useTradeData } from '../hooks/useTradeData';
+import { useTradeData } from '../../hooks/useTradeData';
 import { EquityCurve } from './EquityCurve';
 
 export const TFEXTracker: React.FC = () => {

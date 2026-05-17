@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Trade } from '../hooks/useTradeData';
+import type { Trade } from '../../hooks/useTradeData';
 
 interface EquityCurveProps {
   trades: Trade[];
