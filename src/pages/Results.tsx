@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TFEXTracker, Calendar } from '../components';
+import { TFEXTracker, Calendar, EquityCurve } from '../components';
 import { useTradeData } from '../hooks/useTradeData';
 
 export const Results = () => {
@@ -11,6 +11,9 @@ export const Results = () => {
       <div className="results-grid">
         <TFEXTracker filterDate={selectedDate} />
         <aside className="results-sidebar">
+          <div className="sidebar-top">
+            <EquityCurve trades={trades} />
+          </div>
           <Calendar 
             trades={trades} 
             onDateSelect={setSelectedDate} 

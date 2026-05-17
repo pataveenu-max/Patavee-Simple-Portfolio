@@ -453,6 +453,8 @@ body {
   font-size: 0.7rem;
   opacity: 0.6;
   margin-top: 0.25rem;
+  display: flex;
+  gap: 1rem;
 }
 
 .legend-item {
@@ -462,14 +464,9 @@ body {
 }
 
 .dot {
-  width: 6px;
-  height: 6px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
-}
-
-.dot.success {
-  background: #00ff88;
-  box-shadow: 0 0 8px #00ff88;
 }
 
 .calendar-grid {
@@ -494,37 +491,22 @@ body {
   font-size: 0.75rem;
   border-radius: 4px;
   background: rgba(255,255,255,0.03);
+  cursor: pointer;
+  transition: all 0.2s;
 }
 
-.calendar-day.success {
-  background: rgba(0, 255, 136, 0.2);
-  color: #00ff88;
-  font-weight: 700;
-  border: 1px solid rgba(0, 255, 136, 0.3);
-}
-
-.calendar-day.today {
-  border: 1px solid var(--text-color);
-}
-
-.calendar-day.empty {
-  background: none;
-}
-
-
-/* Navigation Styles */
 .calendar-day.win {
-  background: rgba(0, 255, 136, 0.2);
-  color: #00ff88;
+  background: rgba(0, 255, 136, 0.4) !important;
+  color: #ffffff !important;
   font-weight: 700;
-  border: 1px solid rgba(0, 255, 136, 0.3);
+  border: 1px solid rgba(0, 255, 136, 0.6);
 }
 
 .calendar-day.loss {
-  background: rgba(255, 77, 77, 0.2);
-  color: #ff4d4d;
+  background: rgba(255, 77, 77, 0.4) !important;
+  color: #ffffff !important;
   font-weight: 700;
-  border: 1px solid rgba(255, 77, 77, 0.3);
+  border: 1px solid rgba(255, 77, 77, 0.6);
 }
 
 .calendar-day.selected {
@@ -533,8 +515,24 @@ body {
   z-index: 1;
 }
 
+.calendar-day.today {
+  border: 1px solid var(--text-color);
+}
+
+.calendar-day.empty {
+  background: none;
+  cursor: default;
+}
+
 .dot.win { background: #00ff88; box-shadow: 0 0 8px #00ff88; }
 .dot.loss { background: #ff4d4d; box-shadow: 0 0 8px #ff4d4d; }
+
+.sidebar-top {
+  margin-bottom: 1.5rem;
+  background: var(--accent-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+}
 
 .reason-cell {
   max-width: 150px;

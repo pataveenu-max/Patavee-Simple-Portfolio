@@ -42,7 +42,6 @@ export const TFEXTracker: React.FC<TFEXTrackerProps> = ({ filterDate }) => {
         <h2 className="section-title">
           TFEX Patavee Track Record {filterDate && `(${filterDate})`}
         </h2>
-        <EquityCurve trades={trades} />
       </div>
 
       <form className="trade-form" onSubmit={handleSubmit}>
