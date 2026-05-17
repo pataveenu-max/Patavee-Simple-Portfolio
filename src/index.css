@@ -1,0 +1,505 @@
+:root {
+  --bg-color: #000000;
+  --text-color: #ffffff;
+  --accent-color: #333333;
+  --font-family: 'Inter', sans-serif;
+}
+
+[data-theme='light'] {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --accent-color: #f0f0f0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: var(--font-family);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  width: 100%;
+}
+
+.app-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+  right: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-icon, .theme-toggle-icon {
+  cursor: pointer;
+  font-size: 1.5rem;
+  user-select: none;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.nav-icon:hover, .theme-toggle-icon:hover {
+  opacity: 1;
+}
+
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 2rem;
+  overflow: hidden;
+}
+
+.profile-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.profile-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 600px) {
+  .profile-section {
+    flex-direction: column;
+    text-align: center;
+  }
+  .profile-name {
+    font-size: 2rem;
+  }
+}
+
+/* Market Insights Styles */
+.market-section {
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.section-title {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.6;
+  margin-bottom: 1.5rem;
+}
+
+.market-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.insight-card {
+  background-color: var(--accent-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.insight-card:hover {
+  transform: translateY(-4px);
+}
+
+.insight-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.insight-icon {
+  font-size: 1.2rem;
+}
+
+.insight-category {
+  font-weight: 600;
+  flex-grow: 1;
+}
+
+.insight-status {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.status-bearish { background: #ff4d4d; color: white; }
+.status-fear { background: #ffa500; color: white; }
+.status-volatile { background: #3399ff; color: white; }
+
+.insight-detail {
+  font-size: 0.85rem;
+  line-height: 1.4;
+  opacity: 0.8;
+}
+
+.strategy-note {
+  border-left: 2px solid var(--text-color);
+  padding-left: 1.5rem;
+  margin-top: 3rem;
+}
+
+.strategy-note h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.strategy-note p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  opacity: 0.7;
+}
+
+/* Life Goals Styles */
+.goals-section {
+  margin-top: 4rem;
+  margin-bottom: 5rem;
+  width: 100%;
+}
+
+.goals-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.goal-card {
+  border-top: 1px solid var(--accent-color);
+  padding-top: 1rem;
+}
+
+.goal-category-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.goal-list {
+  list-style: none;
+}
+
+.goal-item {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.goal-bullet {
+  color: var(--text-color);
+  opacity: 0.4;
+}
+
+.mantra-section {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+.mantra-text {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+/* TFEX Tracker & Results Styles */
+.results-page {
+  padding-bottom: 5rem;
+}
+
+.tfex-tracker {
+  width: 100%;
+}
+
+.tracker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  gap: 2rem;
+}
+
+.equity-curve-container {
+  flex: 1;
+  max-width: 400px;
+}
+
+.equity-svg {
+  width: 100%;
+  height: auto;
+  background: var(--accent-color);
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.curve-summary {
+  font-size: 0.8rem;
+  margin-top: 0.5rem;
+  text-align: right;
+  opacity: 0.8;
+}
+
+.trade-form {
+  background: var(--accent-color);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 2rem;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.form-row input, .form-row select, .form-row button {
+  background: var(--bg-color);
+  color: var(--text-color);
+  border: 1px solid rgba(255,255,255,0.1);
+  padding: 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.form-row button {
+  background: var(--text-color);
+  color: var(--bg-color);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+}
+
+.trade-log-container {
+  overflow-x: auto;
+}
+
+.trade-log {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.trade-log th, .trade-log td {
+  text-align: left;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.trade-log th {
+  opacity: 0.5;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+}
+
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff4d4d;
+  cursor: pointer;
+  font-size: 1.2rem;
+  opacity: 0.5;
+}
+
+.delete-btn:hover {
+  opacity: 1;
+}
+
+.text-green { color: #00ff88; }
+.text-red { color: #ff4d4d; }
+
+/* Results Layout */
+.results-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+
+@media (min-width: 1024px) {
+  .results-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .tfex-tracker {
+    flex: 2;
+  }
+  .results-sidebar {
+    flex: 1;
+    position: sticky;
+    top: 2rem;
+  }
+}
+
+/* Calendar Styles */
+.calendar-container {
+  background: var(--accent-color);
+  padding: 1.5rem;
+  border-radius: 8px;
+  width: 100%;
+}
+
+.calendar-header {
+  margin-bottom: 1rem;
+}
+
+.calendar-title {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+.calendar-legend {
+  font-size: 0.7rem;
+  opacity: 0.6;
+  margin-top: 0.25rem;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.dot.success {
+  background: #00ff88;
+  box-shadow: 0 0 8px #00ff88;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.weekday {
+  font-size: 0.6rem;
+  text-align: center;
+  opacity: 0.4;
+  text-transform: uppercase;
+  padding-bottom: 0.5rem;
+}
+
+.calendar-day {
+  aspect-ratio: 1/1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  border-radius: 4px;
+  background: rgba(255,255,255,0.03);
+}
+
+.calendar-day.success {
+  background: rgba(0, 255, 136, 0.2);
+  color: #00ff88;
+  font-weight: 700;
+  border: 1px solid rgba(0, 255, 136, 0.3);
+}
+
+.calendar-day.today {
+  border: 1px solid var(--text-color);
+}
+
+.calendar-day.empty {
+  background: none;
+}
+
+
+/* Navigation Styles */
+.nav-container {
+  position: relative;
+}
+
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  text-align: center;
+}
+
+.nav-menu a {
+  font-size: 2.5rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: white;
+  opacity: 0.6;
+  transition: opacity 0.3s;
+}
+
+.nav-menu a:hover {
+  opacity: 1;
+}
+
+@media (max-width: 600px) {
+  .tracker-header {
+    flex-direction: column;
+  }
+  .form-row > * {
+    flex: 1 1 100%;
+  }
+}
+
+
+
