@@ -9,6 +9,8 @@ export interface Trade {
   exit: number;
   contracts: number;
   netPL: number;
+  buyReason?: string;
+  sellReason?: string;
 }
 
 export const useTradeData = () => {
@@ -21,9 +23,9 @@ export const useTradeData = () => {
     } else {
       // Add sample trades for Benz to see the graph initially
       const sampleTrades: Trade[] = [
-        { id: '1', date: '2026-05-10', series: 'S50M24', side: 'Long', entry: 845.0, exit: 852.5, contracts: 2, netPL: 2900 },
-        { id: '2', date: '2026-05-12', series: 'S50M24', side: 'Short', entry: 855.0, exit: 858.0, contracts: 1, netPL: -650 },
-        { id: '3', date: '2026-05-14', series: 'S50M24', side: 'Long', entry: 850.2, exit: 856.4, contracts: 3, netPL: 3570 },
+        { id: '1', date: '2026-05-10', series: 'S50M24', side: 'Long', entry: 845.0, exit: 852.5, contracts: 2, netPL: 2900, buyReason: 'Breakout above 840', sellReason: 'Hit target at resistance' },
+        { id: '2', date: '2026-05-12', series: 'S50M24', side: 'Short', entry: 855.0, exit: 858.0, contracts: 1, netPL: -650, buyReason: 'Bearish divergence', sellReason: 'Stop loss hit' },
+        { id: '3', date: '2026-05-14', series: 'S50M24', side: 'Long', entry: 850.2, exit: 856.4, contracts: 3, netPL: 3570, buyReason: 'Retest of support', sellReason: 'Evening star pattern' },
       ];
       setTrades(sampleTrades);
       localStorage.setItem('life-plan-trades', JSON.stringify(sampleTrades));
